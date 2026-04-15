@@ -7,8 +7,10 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
-    // MARK: Visual content
+    // MARK: - Properties
+    var userService: UserService?
     
+    // MARK: Visual content
     var loginScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,7 +43,7 @@ final class LoginViewController: UIViewController {
         return stack
     }()
     
-    var loginButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -54,7 +56,7 @@ final class LoginViewController: UIViewController {
 
         button.setTitle("Login", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.addTarget(nil, action: #selector(touchLoginButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(touchLoginButton), for: .touchUpInside)
         button.layer.cornerRadius = LayoutConstants.cornerRadius
         button.clipsToBounds = true
         return button
@@ -93,7 +95,6 @@ final class LoginViewController: UIViewController {
     }()
     
     // MARK: - Setup section
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -120,7 +121,6 @@ final class LoginViewController: UIViewController {
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-
             loginScrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             loginScrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             loginScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -155,7 +155,6 @@ final class LoginViewController: UIViewController {
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         nc.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -163,14 +162,34 @@ final class LoginViewController: UIViewController {
         let nc = NotificationCenter.default
         nc.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         nc.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-
     }
     
     // MARK: - Event handlers
-
     @objc private func touchLoginButton() {
+        guard let login = loginField.text, !login.isEmpty else {
+            showAlert(message: "Введите логин")
+            return
+        }
+        
+        guard let userService = userService else {
+            showAlert(message: "Сервис пользователей не настроен")
+            return
+        }
+        
+        guard let user = userService.getUser(byLogin: login) else {
+            showAlert(message: "Пользователь с таким логином не найден")
+            return
+        }
+        
         let profileVC = ProfileViewController()
+        profileVC.user = user
         navigationController?.setViewControllers([profileVC], animated: true)
+    }
+    
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
 
     @objc private func keyboardShow(notification: NSNotification) {
@@ -186,10 +205,7 @@ final class LoginViewController: UIViewController {
 }
 
 // MARK: - Extension
-
 extension LoginViewController: UITextFieldDelegate {
-    
-    // tap 'done' on the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

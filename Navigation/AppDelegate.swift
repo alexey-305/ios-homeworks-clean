@@ -8,14 +8,27 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    
     var window: UIWindow?
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // create tab bar with feed and profile items
+        // 1. Создаём пользователя
+        let user = User(
+            login: "catlover",
+            fullName: "Самый крутой кот",
+            avatar: UIImage(named: "avatar"),
+            status: "Хочу рыбу..."
+        )
+        
+        // 2. Создаём сервис с этим пользователем
+        let userService = CurrentUserService(user: user)
+        
+        // 3. Создаём LoginViewController и внедряем зависимость
         let loginVC = LoginViewController()
+        loginVC.userService = userService
+        
+        // 4. Оборачиваем в навигационный контроллер
         let profileNC = UINavigationController(rootViewController: loginVC)
         profileNC.tabBarItem = UITabBarItem(title: "Profile",
                                             image: UIImage(systemName: "person.crop.circle"),
@@ -39,4 +52,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-
