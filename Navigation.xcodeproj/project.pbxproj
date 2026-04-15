@@ -30,6 +30,7 @@
 		37EE787C2F8F727F00D7232D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EE787B2F8F727F00D7232D /* User.swift */; };
 		37EE787E2F8F729B00D7232D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EE787D2F8F729B00D7232D /* UserService.swift */; };
 		37EE78802F8F72B800D7232D /* CurrentUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EE787F2F8F72B800D7232D /* CurrentUserService.swift */; };
+		37EE78822F8F7C0B00D7232D /* TestUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EE78812F8F7C0B00D7232D /* TestUserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		37EE787B2F8F727F00D7232D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		37EE787D2F8F729B00D7232D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		37EE787F2F8F72B800D7232D /* CurrentUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserService.swift; sourceTree = "<group>"; };
+		37EE78812F8F7C0B00D7232D /* TestUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				3601A2BB28494D5D000D261A /* FeedViewController.swift */,
 				3601A2C32849E232000D261A /* InfoViewController.swift */,
 				3601A2B028490DDF000D261A /* Assets.xcassets */,
+				37EE78812F8F7C0B00D7232D /* TestUserService.swift */,
 				3601A2B228490DDF000D261A /* LaunchScreen.storyboard */,
 				3601A2B528490DDF000D261A /* Info.plist */,
 			);
@@ -216,6 +219,7 @@
 				36C5F0612850B723005EFC6C /* PhotosViewController.swift in Sources */,
 				36528E39284F700900965BA4 /* ExtensionUIImage.swift in Sources */,
 				36C5F05C2850B1B1005EFC6C /* PhotosTableViewCell.swift in Sources */,
+				37EE78822F8F7C0B00D7232D /* TestUserService.swift in Sources */,
 				37EE787E2F8F729B00D7232D /* UserService.swift in Sources */,
 				3601A2C42849E232000D261A /* InfoViewController.swift in Sources */,
 				37EE787C2F8F727F00D7232D /* User.swift in Sources */,
