@@ -1,14 +1,13 @@
-//
-//  ProfileViewController.swift
-//  Navigation
-//
-
 import UIKit
 
 class ProfileViewController: UIViewController {
     
     // MARK: - Properties
-    var user: User?
+    var user: User? {
+        didSet {
+            updateUI()
+        }
+    }
     
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -52,13 +51,16 @@ class ProfileViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
     }
     
+    private func updateUI() {
+        tableView.reloadData()
+    }
+    
     // MARK: - Setup
     private func setupTableView() {
         view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: "PostCell")
-        tableView.register(ProfileHeaderView.self, forHeaderFooterViewReuseIdentifier: "ProfileHeader")
         tableView.separatorStyle = .none
     }
     
@@ -94,12 +96,10 @@ extension ProfileViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ProfileHeader") as? ProfileHeaderView ?? ProfileHeaderView()
-        
+        let header = ProfileHeaderView()
         if let user = user {
-            header.update(with: user)
+            header.configure(with: user)
         }
-        
         return header
     }
     
