@@ -21,7 +21,6 @@
 		36528E3C284F725E00965BA4 /* LayoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36528E3B284F725E00965BA4 /* LayoutConstants.swift */; };
 		36528E3F284FDF9100965BA4 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36528E3E284FDF9100965BA4 /* PostTableViewCell.swift */; };
 		36528E41284FE38C00965BA4 /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36528E40284FE38C00965BA4 /* ExtensionUIView.swift */; };
-		36C5F05C2850B1B1005EFC6C /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5F05B2850B1B1005EFC6C /* PhotosTableViewCell.swift */; };
 		36C5F05E2850B4A6005EFC6C /* PhotoExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5F05D2850B4A6005EFC6C /* PhotoExamples.swift */; };
 		36C5F0612850B723005EFC6C /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5F0602850B723005EFC6C /* PhotosViewController.swift */; };
 		36C5F0632850B7B6005EFC6C /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5F0622850B7B6005EFC6C /* PhotosCollectionViewCell.swift */; };
@@ -33,6 +32,7 @@
 		378DA8E32F90AC5F00994E71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378DA8E22F90AC5F00994E71 /* SceneDelegate.swift */; };
 		378DA8E52F90AD2F00994E71 /* TestUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378DA8E42F90AD2F00994E71 /* TestUserService.swift */; };
 		378DA8E82F90AE1300994E71 /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378DA8E72F90AE1300994E71 /* LoginFactory.swift */; };
+		379F9A542F99F78B00C03503 /* iOSIntPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 379F9A532F99F78B00C03503 /* iOSIntPackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,6 @@
 		36528E3B284F725E00965BA4 /* LayoutConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstants.swift; sourceTree = "<group>"; };
 		36528E3E284FDF9100965BA4 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		36528E40284FE38C00965BA4 /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
-		36C5F05B2850B1B1005EFC6C /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 		36C5F05D2850B4A6005EFC6C /* PhotoExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoExamples.swift; sourceTree = "<group>"; };
 		36C5F0602850B723005EFC6C /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		36C5F0622850B7B6005EFC6C /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -70,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			files = (
 				3717447C2F8D3C7E00278D56 /* SnapKit in Frameworks */,
+				379F9A542F99F78B00C03503 /* iOSIntPackage in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -116,7 +116,6 @@
 				3601A2BD28494E4F000D261A /* ProfileViewController.swift */,
 				3601A2BF28495339000D261A /* PostViewController.swift */,
 				36528E3E284FDF9100965BA4 /* PostTableViewCell.swift */,
-				36C5F05B2850B1B1005EFC6C /* PhotosTableViewCell.swift */,
 				3601A2C128495DDF000D261A /* Post.swift */,
 				36C5F0602850B723005EFC6C /* PhotosViewController.swift */,
 				36C5F0622850B7B6005EFC6C /* PhotosCollectionViewCell.swift */,
@@ -172,6 +171,7 @@
 			name = Navigation;
 			packageProductDependencies = (
 				3717447B2F8D3C7E00278D56 /* SnapKit */,
+				379F9A532F99F78B00C03503 /* iOSIntPackage */,
 			);
 			productName = Navigation;
 			productReference = 3601A2A428490DDF000D261A /* Navigation.app */;
@@ -202,6 +202,7 @@
 			mainGroup = 3601A29B28490DDF000D261A;
 			packageReferences = (
 				3717447A2F8D3C7E00278D56 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				379F9A522F99F78B00C03503 /* XCRemoteSwiftPackageReference "iOSIntPackage" */,
 			);
 			preferredProjectObjectVersion = 100;
 			productRefGroup = 3601A2A528490DDF000D261A /* Products */;
@@ -244,7 +245,6 @@
 				36C5F0612850B723005EFC6C /* PhotosViewController.swift in Sources */,
 				36528E39284F700900965BA4 /* ExtensionUIImage.swift in Sources */,
 				378DA8E12F90AC0F00994E71 /* LoginInspector.swift in Sources */,
-				36C5F05C2850B1B1005EFC6C /* PhotosTableViewCell.swift in Sources */,
 				3601A2C42849E232000D261A /* InfoViewController.swift in Sources */,
 				378DA8E32F90AC5F00994E71 /* SceneDelegate.swift in Sources */,
 				36C5F0632850B7B6005EFC6C /* PhotosCollectionViewCell.swift in Sources */,
@@ -468,6 +468,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		379F9A522F99F78B00C03503 /* XCRemoteSwiftPackageReference "iOSIntPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TrueMax/iOSIntPackage.git";
+			requirement = {
+				branch = imagepublisher;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -475,6 +483,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3717447A2F8D3C7E00278D56 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		379F9A532F99F78B00C03503 /* iOSIntPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 379F9A522F99F78B00C03503 /* XCRemoteSwiftPackageReference "iOSIntPackage" */;
+			productName = iOSIntPackage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
